@@ -2,16 +2,16 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.JobMapper">
-    <select id="searchAll" resultType="com.example.entity.Job">
+<mapper namespace="com.job.demo.mapper.JobMapper">
+    <select id="searchAll" resultType="com.job.demo.entity.Job">
         select * from job
     </select>
 
-    <select id="searchByTitle" resultType="com.example.entity.Job">
+    <select id="searchByTitle" resultType="com.job.demo.entity.Job">
         select * from job where title like CONCAT('%',#{title},'%')
     </select>
 
-    <insert id="addJob" useGeneratedKeys="true" keyProperty="jid" parameterType="com.example.entity.Job">
+    <insert id="addJob" useGeneratedKeys="true" keyProperty="jid" parameterType="com.job.demo.entity.Job">
         insert into job (title,introduction,requirement,salary,bid,cid,startDate,endDate,job.state)
             value (#{title},#{introduction},#{requirement},#{salary},#{bid},#{cid},#{startDate},#{endDate},#{state})
     </insert>
@@ -20,7 +20,7 @@
         delete from job where jid=#{jid}
     </delete>
 
-    <update id="updateJob" parameterType="com.example.entity.Job">
+    <update id="updateJob" parameterType="com.job.demo.entity.Job">
         update job
         set title=#{title},introduction=#{introduction},requirement=#{requirement},
             salary=#{salary},job.state=#{state},startDate=#{startDate},endDate=#{endDate}

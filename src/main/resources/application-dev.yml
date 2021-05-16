@@ -3,10 +3,10 @@ server:
 
 spring:
   datasource:
+    driver-class-name: com.mysql.jdbc.Driver
     username: TJPJob
     password: TJPJobpassword
     url: jdbc:mysql://121.5.149.108:3306/tjpjob?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
