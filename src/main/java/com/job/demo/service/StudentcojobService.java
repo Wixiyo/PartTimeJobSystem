@@ -1,5 +1,6 @@
 package com.job.demo.service;
 
+import com.job.demo.entity.Job;
 import com.job.demo.mapper.StudentcojobMapper;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,14 @@ public class StudentcojobService {
     public List<HashMap<String,Object>> selectEmpList(int jid){
         return studentcojobMapper.selectEmpList(jid);
     }
+
+    public List<Job> selectBusinessJobList(int bid){
+        return  studentcojobMapper.selectBusinessJobList(bid);
+    }
+
+    public List<Job> selectStudentJobList(int sid){
+        return studentcojobMapper.selectStudentJobList(sid);
+    }
+
 
 }

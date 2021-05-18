@@ -24,4 +24,16 @@ public class StudentcojobController {
     public ResponseData GetEmpList(@PathVariable() int jid){
         return new ResponseData(ExceptionMsg.SUCCESS,studentcojobService.selectEmpList(jid));
     }
+
+    //根据学生获取兼职列表
+    @GetMapping(value = "/GetStudentJobList/{sid}")
+    public ResponseData GetStudentJobList(@PathVariable int sid){
+        return new ResponseData(ExceptionMsg.SUCCESS,studentcojobService.selectStudentJobList(sid));
+    }
+
+    //根据公司获取兼职列表
+    @GetMapping(value = "/GetBusinessJobList/{bid}")
+    public ResponseData GetBusinessJobList(@PathVariable int bid){
+        return new ResponseData(ExceptionMsg.SUCCESS,studentcojobService.selectBusinessJobList(bid));
+    }
 }

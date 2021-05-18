@@ -1,5 +1,6 @@
 package com.job.demo.mapper;
 
+import com.job.demo.entity.Job;
 import com.job.demo.entity.Studentcojob;
 import com.job.demo.entity.StudentcojobExample;
 import org.apache.ibatis.annotations.Param;
@@ -37,4 +38,10 @@ public interface StudentcojobMapper {
 
     @Select("select * from Studentcojob t1, Student t2 where t1.sid=t2.sid and t1.jid =#{jid}")
     List<HashMap<String,Object>> selectEmpList(@Param("jid") int jid);
+
+    @Select("select * from Job where bid=#{bid}")
+    List<Job> selectBusinessJobList(@Param("bid") int bid);
+
+    @Select("select * from Studentcojob t1, Job t2 where t1.jid=t2.jid and t1.jid =#{jid} and t1.sid =#{sid}")
+    List<Job> selectStudentJobList(@Param("sid") int sid);
 }
