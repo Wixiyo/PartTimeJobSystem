@@ -11,20 +11,17 @@ public class Job {
 
     private String requirement;
 
-    private Integer duration;
-
-    private Integer minsalary;
-
-    private Integer maxsalary;
+    private String salary;
 
     private Integer bid;
 
     private Integer cid;
 
-    private Date createdate;
+    private Date startdate;
 
-    //0:待审核 1:招聘中 2:已下架
     private Integer state;
+
+    private Date enddate;
 
     public Integer getJid() {
         return jid;
@@ -58,28 +55,12 @@ public class Job {
         this.requirement = requirement;
     }
 
-    public Integer getDuration() {
-        return duration;
+    public String getSalary() {
+        return salary;
     }
 
-    public void setDuration(Integer duration) {
-        this.duration = duration;
-    }
-
-    public Integer getMinsalary() {
-        return minsalary;
-    }
-
-    public void setMinsalary(Integer minsalary) {
-        this.minsalary = minsalary;
-    }
-
-    public Integer getMaxsalary() {
-        return maxsalary;
-    }
-
-    public void setMaxsalary(Integer maxsalary) {
-        this.maxsalary = maxsalary;
+    public void setSalary(String salary) {
+        this.salary = salary;
     }
 
     public Integer getBid() {
@@ -98,12 +79,12 @@ public class Job {
         this.cid = cid;
     }
 
-    public Date getCreatedate() {
-        return createdate;
+    public Date getStartdate() {
+        return startdate;
     }
 
-    public void setCreatedate(Date createdate) {
-        this.createdate = createdate;
+    public void setStartdate(Date startdate) {
+        this.startdate = startdate;
     }
 
     public Integer getState() {
@@ -112,5 +93,13 @@ public class Job {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Date getEnddate() {
+        return enddate;
+    }
+
+    public void setEnddate(Date enddate) {
+        this.enddate = enddate;
     }
 }

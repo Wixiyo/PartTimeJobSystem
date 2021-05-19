@@ -33,15 +33,15 @@ public interface StudentcojobMapper {
 
     int updateByPrimaryKey(Studentcojob record);
 
-    @Update("update Studentcojob set state = #{state} where id = #{id}")
+    @Update("update studentcojob set state = #{state} where id = #{id}")
     int changeStatus(@Param("id")int id,@Param("state")int state);
 
-    @Select("select * from Studentcojob t1, Student t2 where t1.sid=t2.sid and t1.jid =#{jid}")
+    @Select("select * from studentcojob t1, Student t2 where t1.sid=t2.sid and t1.jid =#{jid}")
     List<HashMap<String,Object>> selectEmpList(@Param("jid") int jid);
 
-    @Select("select * from Job where bid=#{bid}")
+    @Select("select * from job where bid=#{bid}")
     List<Job> selectBusinessJobList(@Param("bid") int bid);
 
-    @Select("select * from Studentcojob t1, Job t2 where t1.jid=t2.jid and t1.jid =#{jid} and t1.sid =#{sid}")
+    @Select("select * from studentcojob t1, Job t2 where t1.jid=t2.jid and t1.jid =#{jid} and t1.sid =#{sid}")
     List<Job> selectStudentJobList(@Param("sid") int sid);
 }

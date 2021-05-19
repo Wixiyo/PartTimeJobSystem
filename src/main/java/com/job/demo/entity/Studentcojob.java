@@ -11,7 +11,6 @@ public class Studentcojob {
 
     private Date createdate;
 
-    //0:学生报名 1:录取 2:拒绝录取 3:取消报名
     private Integer state;
 
     public Integer getId() {
