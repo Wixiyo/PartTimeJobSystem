@@ -12,8 +12,8 @@
     </select>
 
     <insert id="addJob" useGeneratedKeys="true" keyProperty="jid" parameterType="com.example.entity.Job">
-        insert into job (title,introduction,requirement,salary,bid,cid,startDate,endDate,job.state)
-            value (#{title},#{introduction},#{requirement},#{salary},#{bid},#{cid},#{startDate},#{endDate},#{state})
+        insert into job (title,introduction,requirement,salary,bid,cid,startDate,endDate,job.state, tags)
+            value (#{title},#{introduction},#{requirement},#{salary},#{bid},#{cid},#{startDate},#{endDate},#{state},#{tags})
     </insert>
 
     <delete id="deleteJob" parameterType="int">

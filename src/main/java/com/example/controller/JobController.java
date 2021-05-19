@@ -5,9 +5,13 @@ import com.example.entity.Job;
 import com.example.result.ExceptionMsg;
 import com.example.result.ResponseData;
 import com.example.service.JobService;
+import com.example.service.JobTagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +23,8 @@ public class JobController {
 
     @Autowired
     private JobService jobService;
+    @Autowired
+    private JobTagService jobTagService;
 
     @RequestMapping("/")//查询所有兼职
     public ResponseData getAllJob(){
@@ -49,4 +55,12 @@ public class JobController {
         jobService.updateJob(job);
         return new ResponseData(ExceptionMsg.SUCCESS,job);
     }
+
+    @RequestMapping(value = "/get-jobs-sorted-by-tags", method = RequestMethod.POST)
+    public ResponseData getJobsSortedByTags(HttpServletRequest request) {
+        String Tags = request.getParameter("tags");
+        List<String> splitedTags = new ArrayList<>(Arrays.asList(Tags.split(";")));
+        return new ResponseData(ExceptionMsg.SUCCESS, jobTagService.searchByTags(splitedTags));
+    }
+
 }
