@@ -13,6 +13,15 @@ public class Job {
     private Date startDate;
     private Date endDate;
     private int state;
+    private String tags;
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
 
     public int getJid() {
         return jid;
