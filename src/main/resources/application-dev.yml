@@ -2,6 +2,11 @@ server:
   port: 8080
 
 spring:
+  servlet:
+    multipart:
+      max-file-size: 1000MB        #上传文件大小
+      max-request-size: 1000MB     #下载文件大小
+
   datasource:
     username: TJPJob
     password: TJPJobpassword
@@ -18,3 +23,5 @@ logging:
     com:
       example:
         mapper : debug
+
+

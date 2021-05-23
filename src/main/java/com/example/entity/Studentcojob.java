@@ -7,12 +7,20 @@ public class Studentcojob {
 
     private Integer sid;
 
-    private Integer jid;
+    private String bid;
 
     private Date createdate;
 
     //0:学生报名 1:录取 2:拒绝录取 3:取消报名
     private Integer state;
+
+    public String getBid() {
+        return bid;
+    }
+
+    public void setBid(String bid) {
+        this.bid = bid;
+    }
 
     public Integer getId() {
         return id;
@@ -28,14 +36,6 @@ public class Studentcojob {
 
     public void setSid(Integer sid) {
         this.sid = sid;
-    }
-
-    public Integer getJid() {
-        return jid;
-    }
-
-    public void setJid(Integer jid) {
-        this.jid = jid;
     }
 
     public Date getCreatedate() {

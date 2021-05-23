@@ -8,12 +8,12 @@ import com.example.service.JobService;
 import com.example.service.JobTagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.*;
 
 
 @RestController
@@ -44,9 +44,9 @@ public class JobController {
         return new ResponseData(ExceptionMsg.SUCCESS,job);
     }
 
-    @RequestMapping(value = "/delete/{jid}")//删除兼职
-    public ResponseData deleteJob(@PathVariable int jid){
-        jobService.deleteJob(jid);
+    @RequestMapping(value = "/delete/{busid}")//删除兼职
+    public ResponseData deleteJob(@PathVariable String busid){
+        jobService.deleteJob(busid);
         return new ResponseData(ExceptionMsg.SUCCESS,"已删除");
     }
 
@@ -63,4 +63,28 @@ public class JobController {
         return new ResponseData(ExceptionMsg.SUCCESS, jobTagService.searchByTags(splitedTags));
     }
 
+    @PostMapping("/uploadExcel")
+    public ResponseData uploadExcel(@RequestParam("file") MultipartFile file) throws IOException {
+        String fileName = file.getOriginalFilename(); // 获取文件名
+
+        InputStream is = null;
+
+        try{
+            is = file.getInputStream();
+            List<Map> jobList = jobService.getListByExcel(is,fileName);// 获取解析后的List集合
+//            return new ResponseData(ExceptionMsg.SUCCESS, jobList);
+             //System.out.println(studentList.toString());
+            Boolean result = jobService.batchImportJobInfo(jobList); // 把数据插入数据库
+            if (result){
+                return new ResponseData(ExceptionMsg.SUCCESS, "文件上传成功");
+            }else {
+                return new ResponseData(ExceptionMsg.SUCCESS, "文件上传失败");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            is.close();
+        }
+        return new ResponseData(ExceptionMsg.FAILED, "文件错误");
+    }
 }

@@ -4,6 +4,7 @@ import com.example.entity.Job;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface JobMapper {
@@ -13,7 +14,10 @@ public interface JobMapper {
 
     void addJob(Job job);
 
-    void deleteJob(int jid);
+    void deleteJob(String busid);
 
     void updateJob(Job job);
+
+    // 批量导入学生信息
+    Integer batchImportJobInfo(List<Map> jobList);
 }

@@ -3,17 +3,51 @@ package com.example.entity;
 import java.util.Date;
 
 public class Job {
-    private int jid;
-    private int bid;
-    private int cid;
+    private String busid;
     private String title;
     private String introduction;
     private String requirement;
-    private int salary;
-    private Date startDate;
-    private Date endDate;
+    private String workDate;
     private int state;
     private String tags;
+    private String position;
+    private String nums;
+    private String salary;
+
+    public String getSalary() {
+        return salary;
+    }
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+    public String getBusid() {
+        return busid;
+    }
+    public void setBusid(String busid) {
+        this.busid = busid;
+    }
+    public void setBid(String bid) {
+    }
+    public String getWorkDate() {
+        return workDate;
+    }
+    public void setWorkDate(String workDate) {
+        this.workDate = workDate;
+    }
+    public String getPosition() {
+        return position;
+    }
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getNums() {
+        return nums;
+    }
+
+    public void setNums(String nums) {
+        this.nums = nums;
+    }
 
     public String getTags() {
         return tags;
@@ -21,30 +55,6 @@ public class Job {
 
     public void setTags(String tags) {
         this.tags = tags;
-    }
-
-    public int getJid() {
-        return jid;
-    }
-
-    public void setJid(int jid) {
-        this.jid = jid;
-    }
-
-    public int getBid() {
-        return bid;
-    }
-
-    public void setBid(int bid) {
-        this.bid = bid;
-    }
-
-    public int getCid() {
-        return cid;
-    }
-
-    public void setCid(int cid) {
-        this.cid = cid;
     }
 
     public String getTitle() {
@@ -69,30 +79,6 @@ public class Job {
 
     public void setRequirement(String requirement) {
         this.requirement = requirement;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 
     public int getState() {
