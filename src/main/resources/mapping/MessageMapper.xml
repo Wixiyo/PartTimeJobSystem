@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.MessageMapper">
+    <select id="searchBySid" resultType="com.example.entity.Message">
+        SELECT * FROM message
+        WHERE message.to=#{sid} AND message.state=0
+    </select>
+    <update id="setMessageRead">
+        UPDATE message
+        SET message.state=1
+        WHERE id=#{id}
+    </update>
+    <insert id="insertMessage">
+        INSERT INTO message (text, message.from, message.state, message.to)
+        VALUES(#{text}, #{from}, 0, #{to})
+    </insert>
+
+
+</mapper>

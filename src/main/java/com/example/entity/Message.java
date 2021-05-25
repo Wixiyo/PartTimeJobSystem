@@ -4,7 +4,7 @@ public class Message {
     private Integer id;
     private String text;
     private String from;
-    private  Integer state;
+    private Integer state;
     private Integer to;
 
     public Integer getId() {
