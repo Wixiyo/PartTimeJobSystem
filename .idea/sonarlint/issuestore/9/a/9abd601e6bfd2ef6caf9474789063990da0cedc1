@@ -1,15 +1,15 @@
 
-l
-java:S4488;"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ËÛãëıÿÿÿÿ8öÇ»Ä˜/
+G
+java:S5411N"*Use the primitive boolean expression here.(€‘¨Ä8ºôÏ˜/
 ]
 java:S2259V"@A "NullPointerException" could be thrown; "is" is nullable here.(şÑù8ÆùÅ˜/
+l
+java:S4488;"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ËÛãëıÿÿÿÿ8öÇ»Ä˜/
+m	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ‘Ú÷8‰×ë¬˜/
 l
 java:S4488)"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(êú‰ªùÿÿÿÿ8öÇ»Ä˜/
 ]	java:S125K"<This block of commented-out lines of code should be removed.(Ô¸¬‚ùÿÿÿÿ8ğ“Ï˜/
 L
 java:S3740J"/Provide the parametrized type for this generic.(èáÁÁ8ë×€Æ˜/
-m	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ‘Ú÷8‰×ë¬˜/
 l
 java:S44885"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(µÒÿàÿÿÿÿÿ8öÇ»Ä˜/
-G
-java:S5411N"*Use the primitive boolean expression here.(€‘¨Ä8ºôÏ˜/

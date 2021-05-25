@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>报名人员详情</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+ <div class="wrap">
+  <div class="page-title">
+    <span class="modular fl"><i class="order"></i><em><span class="h-cont h-right">兼职编号：</span><span id="order_id">20210317B</span></em></span>
+  </div>
+  <dl class="orderDetail">
+   <dt class="order-h">兼职详情</dt>
+   <dd>
+    <ul>
+     <li>
+      <span class="h-cont h-right">兼职标题：</span>
+      <span class="h-cont h-left" id="name">城规学院干部培训中心</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">薪资：</span>
+      <span class="h-cont h-left" id="time">30元/小时，按时月结</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">兼职内容：</span>
+      <span class="h-cont h-left" id="phone">统计表格、整理文档、接听电话、图文编辑等</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">特殊要求：</span>
+      <span class="h-cont h-left" id="status">熟练word、Excel、认真负责，踏实细心，学习能力快。熟悉PS软
+      件优先录取</span>
+     </li>
+    </ul>
+   </dd>
+   <dd>
+    <table class="list-style">
+     <tr>
+      <th>报名人</th>
+      <th>手机号码</th>
+      <th>学院</th>
+      <th>年级</th>
+      <th>报名状态</th>
+      <th>操作</th>
+     </tr>
+     <tr>
+      <td id="book_name">张三</td>
+      <td id="book_body">15266678889</td>
+      <td>
+       <span>
+        <em id="book_prize">软件学院</em>
+       </span>
+      </td>
+      <td>1</td>
+      <td>报名中</td>
+      <td style="width: 150px;">
+       <span>
+        <input type="button" value="录用该学生" class="btnStyle" id="accpect" />
+        <input type="button" value="拒绝该学生" class="btnStyle" id="reject" />
+       </span>
+      </td>
+     </tr>
+    </table>
+   </dd>
+   <dd>
+  </dl>
+ </div>
+ <script src="js/jquery.js"></script>
+ <script src="js/order_detail.js"></script>
+</body>
+</html>

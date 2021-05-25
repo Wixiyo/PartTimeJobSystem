@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>产品列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+ <div class="wrap">
+  <div class="page-title">
+    <span class="modular fl"><i class="add"></i><em>编辑/新增兼职</em></span>
+    <span class="modular fr"><a href="product_list.html" class="pt-link-btn">返回兼职列表</a></span>
+  </div>
+  <table class="list-style">
+   <tr>
+    <td style="text-align:right;width:15%;">兼职名称：</td>
+    <td><input type="text" class="textBox length-long" id="title"/></td>
+   </tr>
+  <tr>
+    <td style="text-align:right;">商务编号：</td>
+    <td><input type="text" class="textBox length-long" id="Barcode" /></td>
+  </tr>
+   <tr>
+    <td style="text-align:right;">报酬：</td>
+    <td><input type="text" class="textBox length-long" id="author"/></td>
+   </tr>
+   <tr>
+    <td style="text-align:right;">工作时间：</td>
+    <td>
+     <input type="text" class="textBox length-long" id="Prize"/>
+    </td>
+   </tr>
+  <tr>
+    <td style="text-align:right;">工作地点：</td>
+    <td><input type="text" class="textBox length-long" id="author" /></td>
+  </tr>
+   <tr>
+    <td style="text-align:right;">需要人数：</td>
+    <td>
+     <input type="text" class="textBox length-long" id="Stock"/>
+    </td>
+   </tr>
+   
+   <tr>
+    <td style="text-align:right;">兼职内容：</td>
+    <td><textarea class="textarea" id="body">...</textarea></td>
+   </tr>
+  <tr>
+    <td style="text-align:right;">特殊需求：</td>
+    <td><textarea class="textarea" id="body">...</textarea></td>
+  </tr>
+  <tr>
+    <td style="text-align:right;">设置标签：</td>
+    <td><input type="text" class="textBox length-long" id="author" /></td>
+  </tr>
+   <tr >
+    <td style="text-align:right;"></td>
+    <td id="add_book"><input type="button" value="发布兼职" class="tdBtn" /></td>
+   </tr>
+  </table>
+ </div>
+ <script src="js/jquery.js"></script>
+ <script src="js/public.js"></script>
+ <script src="js/product.js"></script>
+</body>
+</html>
