@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.jobManager;
 
 import java.util.Date;
 
@@ -7,7 +7,7 @@ public class Studentcojob {
 
     private Integer sid;
 
-    private String bid;
+    private String busid;
 
     private Date createdate;
 
@@ -15,11 +15,11 @@ public class Studentcojob {
     private Integer state;
 
     public String getBid() {
-        return bid;
+        return busid;
     }
 
     public void setBid(String bid) {
-        this.bid = bid;
+        this.busid = bid;
     }
 
     public Integer getId() {

@@ -1,9 +1,7 @@
 package com.example.service;
 
 import com.example.entity.Message;
-import com.example.entity.Post;
 import com.example.mapper.MessageMapper;
-import com.example.mapper.PostMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,8 @@
 package com.example.service;
 
-import com.example.entity.Job;
-import com.example.mapper.JobMapper;
+import com.example.jobManager.Job;
+import com.example.jobManager.JobMapper;
+import com.example.jobManager.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

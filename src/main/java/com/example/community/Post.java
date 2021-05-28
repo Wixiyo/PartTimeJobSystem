@@ -1,11 +1,12 @@
-package com.example.entity;
+package com.example.community;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
 public class Post {
     private Integer pid;
-
-    private Integer id;
 
     private Integer kind;
 
@@ -17,6 +18,8 @@ public class Post {
 
     private Integer heat;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createdate;
 
     private Integer state;
@@ -27,14 +30,6 @@ public class Post {
 
     public void setPid(Integer pid) {
         this.pid = pid;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Integer getKind() {

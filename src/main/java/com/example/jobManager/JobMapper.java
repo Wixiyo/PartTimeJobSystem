@@ -1,6 +1,6 @@
-package com.example.mapper;
+package com.example.jobManager;
 
-import com.example.entity.Job;
+import com.example.jobManager.Job;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

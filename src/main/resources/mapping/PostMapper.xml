@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.community.PostMapper">
+    <select id="getPost" resultType="com.example.community.Post">
+        SELECT * FROM post order by createdate desc
+    </select>
+    <insert id="addPost">
+        INSERT INTO post (title, content, createdate)
+        VALUES(#{title}, #{content}, now())
+    </insert>
+
+    <select id="getComments" resultType="com.example.community.Comment">
+        SELECT * FROM comment
+        where pid=#{pid}
+        order by createdate desc
+    </select>
+    <insert id="addComment">
+        INSERT INTO comment (pid, sid, content, createdate)
+        VALUES(#{pid}, #{sid}, #{content}, now())
+    </insert>
+
+
+</mapper>

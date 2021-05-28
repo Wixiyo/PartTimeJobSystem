@@ -1,7 +1,7 @@
 package com.example.mapper;
 
 import com.example.entity.Interest;
-import com.example.entity.Job;
+import com.example.jobManager.Job;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

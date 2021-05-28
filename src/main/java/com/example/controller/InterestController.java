@@ -4,22 +4,27 @@ import com.example.entity.Interest;
 import com.example.result.ExceptionMsg;
 import com.example.result.ResponseData;
 import com.example.service.InterestService;
-import com.example.service.JobService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/interest")
 @CrossOrigin(origins = "*", maxAge = 3600)//用于ajax访问
+@Api(tags = "收藏管理接口")
 public class InterestController {
     @Autowired
     private InterestService interestService;
 
-    @RequestMapping("/{sid}")//查询某个学生收藏的兼职
+    @ApiOperation(value = "查询某个学生收藏的兼职")
+    @GetMapping("/{sid}")
     public ResponseData getStuInterest(@PathVariable int sid){
         return new ResponseData(ExceptionMsg.SUCCESS, interestService.getStuInterest(sid));
     }
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
+
+    @ApiOperation(value = "学生收藏兼职")
+    @PostMapping(value = "/add")
     public ResponseData addInterest(Interest interest){
         interestService.addInterest(interest);
         return new ResponseData(ExceptionMsg.SUCCESS,interest);

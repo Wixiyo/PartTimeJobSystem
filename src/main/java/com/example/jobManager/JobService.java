@@ -1,8 +1,8 @@
-package com.example.service;
+package com.example.jobManager;
 
 import com.example.entity.BaseJob;
-import com.example.entity.Job;
-import com.example.mapper.JobMapper;
+import com.example.jobManager.Job;
+import com.example.jobManager.JobMapper;
 import com.example.utils.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +19,7 @@ public class JobService {
     @Autowired
     JobMapper jobMapper;
     public List<Job> searchAll(){
+
         return jobMapper.searchAll();
     }
 

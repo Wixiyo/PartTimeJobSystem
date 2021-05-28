@@ -1,13 +1,16 @@
 package com.example.controller;
 
+import io.swagger.annotations.Api;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/a")
+@RequestMapping("/test")
+@Api(tags = "测试接口")
 public class TestController {
-    @RequestMapping("/b")
+    @GetMapping("")
     public String getUser(){
-        return "b";
+        return "hello world";
     }
 }
