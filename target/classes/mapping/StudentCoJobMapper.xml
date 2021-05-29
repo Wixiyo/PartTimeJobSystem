@@ -16,4 +16,11 @@
     <select id="isStuInApply" resultType="com.example.jobManager.Studentcojob">
         select * from  studentcojob where busid=#{busid} and sid=#{sid}
     </select>
+    <select id="searchJobsOfStudent" resultType="com.example.jobManager.Job">
+        SELECT * FROM JOB
+        WHERE busid IN (
+            SELECT busid FROM studentcojob
+            WHERE sid=#{sid} and studentcojob.state=#{state}
+        );
+    </select>
 </mapper>

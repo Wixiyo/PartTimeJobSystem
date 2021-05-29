@@ -31,4 +31,11 @@ public class StudentCoJobController {
         StudentCoJobService.updateStuCoJob(scjob);
         return new ResponseData(ExceptionMsg.SUCCESS,scjob);
     }
+
+    //搜索学生兼职
+    @ApiOperation(value = "搜索学生兼职")
+    @PostMapping(value = "/search/{sid}/{state}")
+    public ResponseData searchJobsOfStudent(@PathVariable int sid, @PathVariable int state){
+        return new ResponseData(ExceptionMsg.SUCCESS, StudentCoJobService.searchJobsOfStudent(sid, state));
+    }
 }

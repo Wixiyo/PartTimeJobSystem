@@ -5,6 +5,7 @@ import com.example.jobManager.StudentCoJobMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class StudentCoJobService {
@@ -27,5 +28,9 @@ public class StudentCoJobService {
             return 0;
         else
             return studentcojobMapper.numsOfApply(busid);
+    }
+
+    public List<Job> searchJobsOfStudent(int sid, int state) {
+        return studentcojobMapper.searchJobsOfStudent(sid, state);
     }
 }
