@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/post")
 @CrossOrigin(origins = "*", maxAge = 3600)//用于ajax访问
-@Api(tags="评论管理接口")
+@Api(tags="社区交流接口")
 public class PostController {
     @Autowired
     PostService postService;
@@ -25,9 +25,16 @@ public class PostController {
     }
 
     @ApiOperation(value = "对帖子评论")
-    @PostMapping(value = "/addcomment")
-    public ResponseData addComment(Comment comment) {
+    @PostMapping(value = "/add-post-comment")
+    public ResponseData addPostComment(Comment comment) {
         postService.addComment(comment);
+        return new ResponseData(ExceptionMsg.SUCCESS);
+    }
+
+    @ApiOperation(value = "对兼职评论")
+    @PostMapping(value = "/add-job-comment")
+    public ResponseData addJobComment(JobComment jobComment) {
+        postService.addJobComment(jobComment);
         return new ResponseData(ExceptionMsg.SUCCESS);
     }
 
@@ -38,8 +45,13 @@ public class PostController {
     }
 
     @ApiOperation(value = "获取某个帖子的评论")
-    @GetMapping(value = "/getcomment/{pid}")
+    @GetMapping(value = "/get-comment/{pid}")
     public ResponseData getComments(@PathVariable Integer pid){
         return new ResponseData(ExceptionMsg.SUCCESS, postService.getComments(pid));
+    }
+    @ApiOperation(value = "获取某个兼职的评论")
+    @GetMapping(value = "/get-job-comment/{busid}")
+    public ResponseData getJobComments(@PathVariable String busid){
+        return new ResponseData(ExceptionMsg.SUCCESS, postService.getJobComments(busid));
     }
 }

@@ -21,5 +21,14 @@
         VALUES(#{pid}, #{sid}, #{content}, now())
     </insert>
 
+    <insert id="addJobComment">
+        INSERT INTO jobcomment (busid, sid, content, createdate)
+        VALUES(#{busid}, #{sid}, #{content}, now())
+    </insert>
+    <select id="getJobComments" resultType="com.example.community.JobComment">
+        SELECT * FROM jobcomment
+        where busid=#{busid}
+        order by createdate desc
+    </select>
 
 </mapper>

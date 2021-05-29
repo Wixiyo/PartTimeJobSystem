@@ -3,6 +3,7 @@ com\example\entity\Reply.class
 com\example\jobManager\JobController.class
 com\example\entity\StudentExample$Criterion.class
 com\example\jobManager\JobService.class
+com\example\community\JobComment.class
 com\example\entity\Student.class
 com\example\entity\StudentExample$Criteria.class
 com\example\DemoApplication.class

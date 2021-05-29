@@ -25,4 +25,11 @@ public class PostService {
     public List<Comment> getComments(Integer pid) {
         return postMapper.getComments(pid);
     }
+
+    public void addJobComment(JobComment jobComment) {
+        postMapper.addJobComment(jobComment);
+    }
+    public List<JobComment> getJobComments(String busid) {
+        return postMapper.getJobComments(busid);
+    }
 }

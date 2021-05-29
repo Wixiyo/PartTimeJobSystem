@@ -278,3 +278,15 @@ m
 =src/main/java/com/example/jobManager/StudentCoJobService.java,0\7\07d93e80ca202c46329c73842d5eea613d63333e
 ^
 .src/main/java/com/example/config/Swagger2.java,3\7\374791a68074379a33ee56cb3236c41ffd0c841e
+‚
+Rtarget/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst,8\a\8ae396f369da14bb5c0973286facff8fb2c70d56
+Š
+Ztarget/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst,a\7\a7fa8b0772ec3c4ca9f2834f568ba1e29fe9750f
+]
+-src/main/resources/mapping/InterestMapper.xml,7\b\7b39c5cc1ad219652d9dad6fc206eba3cd3634a1
+Y
+)target/classes/mapping/InterestMapper.xml,3\5\350b0c96b3486d851f00eeb4e230888aadeaaf58
+T
+$target/classes/mapping/JobMapper.xml,0\7\078f97b9e136bde7fb4672d66331aa92d386ad72
+]
+-target/classes/mapping/StudentCoJobMapper.xml,7\c\7c08a3b7403491d0b56c75b9607321a5cea0541b

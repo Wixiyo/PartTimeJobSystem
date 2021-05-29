@@ -12,4 +12,8 @@ public interface PostMapper {
     void addComment(Comment comment);
 
     List<Comment> getComments(Integer pid);
+
+    void addJobComment(JobComment jobComment);
+
+    List<JobComment> getJobComments(String busid);
 }

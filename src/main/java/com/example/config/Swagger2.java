@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -15,6 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
+@EnableSwaggerBootstrapUI
 public class Swagger2 extends WebMvcConfigurationSupport {
 
     @Bean
@@ -44,14 +46,13 @@ public class Swagger2 extends WebMvcConfigurationSupport {
         /*
         解决访问不了swagger-ui界面（swagger-3以上变为index.html，结构发现变化）
          */
-        registry.addResourceHandler("swagger-ui.html")
+        registry.addResourceHandler("doc.html")
                 .addResourceLocations("classpath:/META-INF/resources/");
         /*
         解决访问不了js等静态资源
          */
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
-
     }
 
 }
