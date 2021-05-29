@@ -290,3 +290,5 @@ T
 $target/classes/mapping/JobMapper.xml,0\7\078f97b9e136bde7fb4672d66331aa92d386ad72
 ]
 -target/classes/mapping/StudentCoJobMapper.xml,7\c\7c08a3b7403491d0b56c75b9607321a5cea0541b
+c
+3src/main/java/com/example/community/JobComment.java,1\1\1186af7cd6bc904268af05888b182df83bd2c17f
