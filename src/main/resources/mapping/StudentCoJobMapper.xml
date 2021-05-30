@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.jobManager.StudentCoJobMapper" >
     <insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.jobManager.Studentcojob">
-        insert into Studentcojob (id,busid,sid,createdate,Studentcojob.state)
-            value (#{id},#{busid},#{sid},#{createdate},#{state})
+        insert into Studentcojob (busid,sid,createdate,Studentcojob.state)
+            value (#{busid},#{sid},now(),#{state})
     </insert>
     <update id="update" parameterType="com.example.jobManager.Studentcojob">
         update Studentcojob

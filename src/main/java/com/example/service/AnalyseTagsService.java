@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.Interest.InterestService;
 import com.example.jobManager.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

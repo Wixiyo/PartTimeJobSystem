@@ -1,8 +1,6 @@
 
 ^
 .src/main/java/com/example/DemoApplication.java,e\e\eed845f1dc90d2a0c9890041200c40b00f5e0901
-]
--src/main/java/com/example/entity/Student.java,3\6\36bb6e9f188e5f856aac6f364e2cb393e52f2d8c
 h
 8src/main/java/com/example/controller/TestController.java,6\c\6c137ae8c42c111ec1bc267fb273b08686f0ab2b
 `
@@ -282,8 +280,6 @@ m
 Rtarget/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst,8\a\8ae396f369da14bb5c0973286facff8fb2c70d56
 Š
 Ztarget/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst,a\7\a7fa8b0772ec3c4ca9f2834f568ba1e29fe9750f
-]
--src/main/resources/mapping/InterestMapper.xml,7\b\7b39c5cc1ad219652d9dad6fc206eba3cd3634a1
 Y
 )target/classes/mapping/InterestMapper.xml,3\5\350b0c96b3486d851f00eeb4e230888aadeaaf58
 T
@@ -292,3 +288,11 @@ $target/classes/mapping/JobMapper.xml,0\7\078f97b9e136bde7fb4672d66331aa92d386a
 -target/classes/mapping/StudentCoJobMapper.xml,7\c\7c08a3b7403491d0b56c75b9607321a5cea0541b
 c
 3src/main/java/com/example/community/JobComment.java,1\1\1186af7cd6bc904268af05888b182df83bd2c17f
+d
+4src/main/java/com/example/StudentManage/Student.java,d\b\db485b11a48838fe916a02c51733a8e485d84844
+n
+>src/main/java/com/example/StudentManage/StudentController.java,d\5\d5add6171f95e9171265e70cf85e0f8f5256c1a8
+j
+:src/main/java/com/example/StudentManage/StudentMapper.java,6\c\6ccbcd9a2c311d72be62d6a1b76aeccde5ebfaa8
+k
+;src/main/java/com/example/StudentManage/StudentService.java,d\3\d30cd0455c07f9702a72fb83f23fa36c05a09abd

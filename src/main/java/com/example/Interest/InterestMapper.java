@@ -1,6 +1,5 @@
-package com.example.mapper;
+package com.example.Interest;
 
-import com.example.entity.Interest;
 import com.example.jobManager.Job;
 import org.springframework.stereotype.Repository;
 

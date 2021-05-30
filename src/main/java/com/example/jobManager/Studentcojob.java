@@ -14,12 +14,12 @@ public class Studentcojob {
     //0:学生报名 1:录取 2:拒绝录取 3:取消报名
     private Integer state;
 
-    public String getBid() {
+    public String getBusid() {
         return busid;
     }
 
-    public void setBid(String bid) {
-        this.busid = bid;
+    public void setBusid(String busid) {
+        this.busid = busid;
     }
 
     public Integer getId() {

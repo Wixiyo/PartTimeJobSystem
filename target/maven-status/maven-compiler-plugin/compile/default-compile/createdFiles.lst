@@ -4,7 +4,6 @@ com\example\jobManager\JobController.class
 com\example\entity\StudentExample$Criterion.class
 com\example\jobManager\JobService.class
 com\example\community\JobComment.class
-com\example\entity\Student.class
 com\example\entity\StudentExample$Criteria.class
 com\example\DemoApplication.class
 com\example\entity\Interest.class
@@ -50,10 +49,13 @@ com\example\entity\StudentcojobExample$GeneratedCriteria.class
 com\example\entity\ClerkExample$Criteria.class
 com\example\entity\AdministratorExample$Criterion.class
 com\example\service\InterestService.class
+com\example\StudentManage\StudentService.class
+com\example\StudentManage\StudentMapper.class
 com\example\entity\AdministratorcopostExample$Criteria.class
 com\example\entity\AdministratorExample$Criteria.class
 com\example\entity\BusinessExample$Criterion.class
 com\example\entity\Sign.class
+com\example\jobManager\StudentController.class
 com\example\entity\Business.class
 com\example\entity\BusinessExample.class
 com\example\entity\Studentcopost.class
@@ -77,6 +79,7 @@ com\example\entity\StudentExample.class
 com\example\jobManager\Studentcojob.class
 com\example\entity\ClerkExample.class
 com\example\entity\SignExample$Criteria.class
+com\example\StudentManage\Student.class
 com\example\entity\Clerk.class
 com\example\entity\PostExample$Criterion.class
 com\example\entity\SignExample$Criterion.class

@@ -1,9 +1,9 @@
-package com.example.entity;
+package com.example.Interest;
 
 public class Interest {
     private int id;
     private int sid;
-    private int jid;
+    private String busid;
 
     public int getId() {
         return id;
@@ -21,11 +21,11 @@ public class Interest {
         this.sid = sid;
     }
 
-    public int getJid() {
-        return jid;
+    public String getBusid() {
+        return busid;
     }
 
-    public void setJid(int jid) {
-        this.jid = jid;
+    public void setBusid(String busid) {
+        this.busid = busid;
     }
 }

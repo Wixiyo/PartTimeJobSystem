@@ -2,13 +2,13 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.InterestMapper">
+<mapper namespace="com.example.Interest.InterestMapper">
     <select id="getStuInterest" resultType="com.example.jobManager.Job">
-        select * from interest inner join job
-        on interest.jid=job.jid
-        where sid=#{sid}
+        select * from job
+        where job.busid IN(select interest.busid from interest where sid=#{sid})
+
     </select>
-    <insert id="addInterest" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.entity.Interest">
+    <insert id="addInterest" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.Interest.Interest">
         insert into interest (sid,jid)
             value (#{sid},#{jid})
     </insert>

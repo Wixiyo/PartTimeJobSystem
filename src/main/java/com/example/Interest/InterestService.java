@@ -1,8 +1,6 @@
-package com.example.service;
+package com.example.Interest;
 
-import com.example.entity.Interest;
 import com.example.jobManager.Job;
-import com.example.mapper.InterestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
