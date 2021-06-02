@@ -38,6 +38,10 @@
         select * from job where introduction like CONCAT('%',#{title},'%')
     </select>
 
+    <select id="searchById" resultType="com.example.jobManager.Job">
+        select * from job where busid=#{busid}
+    </select>
+
     <insert id="addJob" useGeneratedKeys="true" keyProperty="busid" parameterType="com.example.jobManager.Job">
         insert into job (title,introduction,requirement,salary,busid,workDate,job.state, tags, job.position,nums)
             value (#{title},#{introduction},#{requirement},#{salary},#{busid},#{workDate},#{state},#{tags},#{position},#{nums})

@@ -5,7 +5,6 @@ import com.example.result.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.service.Tags;
 
 import javax.annotation.Resource;
 
@@ -37,5 +36,12 @@ public class StudentCoJobController {
     @PostMapping(value = "/search/{sid}/{state}")
     public ResponseData searchJobsOfStudent(@PathVariable int sid, @PathVariable int state){
         return new ResponseData(ExceptionMsg.SUCCESS, StudentCoJobService.searchJobsOfStudent(sid, state));
+    }
+
+    //搜索兼职报名的学生
+    @ApiOperation(value = "搜索兼职报名的学生")
+    @PostMapping(value = "/search-stu/{busid}")
+    public ResponseData searchStudentsOfJob(@PathVariable String busid){
+        return new ResponseData(ExceptionMsg.SUCCESS, StudentCoJobService.searchStudentsOfJob(busid));
     }
 }

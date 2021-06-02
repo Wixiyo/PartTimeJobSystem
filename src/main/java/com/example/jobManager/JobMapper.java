@@ -20,4 +20,6 @@ public interface JobMapper {
 
     // 批量导入学生信息
     Integer batchImportJobInfo(List<Map> jobList);
+
+    Job searchById(String busid);
 }

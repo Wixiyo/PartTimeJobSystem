@@ -23,4 +23,9 @@
             WHERE sid=#{sid} and studentcojob.state=#{state}
         );
     </select>
+
+    <select id="searchStudentsOfJob" parameterType="String" resultType="map">
+        select * from  studentcojob inner join student on studentcojob.sid = student.sid
+        where busid=#{busid}
+    </select>
 </mapper>

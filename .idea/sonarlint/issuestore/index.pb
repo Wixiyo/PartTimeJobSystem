@@ -21,14 +21,6 @@ c
 3src/main/java/com/example/entity/Studentcopost.java,4\8\489694d7431f3ec5263ad041b10b9efb8071610c
 i
 9src/main/java/com/example/entity/StudentcojobExample.java,c\e\cede1afb384a9d9162b526c2ee3282734be87856
-^
-.src/main/java/com/example/entity/Interest.java,5\4\54b431aef73ac7105753a5461fd7186f39ab5c52
-d
-4src/main/java/com/example/mapper/InterestMapper.java,1\9\196896b0639233c3325ef1a6f54813dbba684158
-l
-<src/main/java/com/example/controller/InterestController.java,4\4\44b1ac7daf8a8ab5518114ac0222891ea28731e0
-f
-6src/main/java/com/example/service/InterestService.java,f\e\fe6ac9d03b8e912545b6bb04a339bb1702cc86f6
 d
 4src/main/java/com/example/service/JobTagService.java,f\1\f1dac130fddb7bac709dc4a1695c4471cdb2b498
 8
@@ -296,3 +288,5 @@ j
 :src/main/java/com/example/StudentManage/StudentMapper.java,6\c\6ccbcd9a2c311d72be62d6a1b76aeccde5ebfaa8
 k
 ;src/main/java/com/example/StudentManage/StudentService.java,d\3\d30cd0455c07f9702a72fb83f23fa36c05a09abd
+`
+0src/main/java/com/example/Interest/Interest.java,8\6\8694b8bf6a8c5e49ef411926c4855cf9da061887

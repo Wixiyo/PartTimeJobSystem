@@ -56,4 +56,7 @@ public class JobService {
         } else return false;
     }
 
+    public Job searchById(String busid) {
+        return jobMapper.searchById(busid);
+    }
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class StudentCoJobService {
@@ -32,5 +33,9 @@ public class StudentCoJobService {
 
     public List<Job> searchJobsOfStudent(int sid, int state) {
         return studentcojobMapper.searchJobsOfStudent(sid, state);
+    }
+
+    public List<Map<String,Object>> searchStudentsOfJob(String busid) {
+        return studentcojobMapper.searchStudentsOfJob(busid);
     }
 }

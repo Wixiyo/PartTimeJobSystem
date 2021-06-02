@@ -4,6 +4,7 @@ import com.example.jobManager.Studentcojob;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface StudentCoJobMapper {
@@ -17,4 +18,6 @@ public interface StudentCoJobMapper {
     Integer numsOfApply(String busid);
 
     List<Job> searchJobsOfStudent(int sid, int state);
+
+    List<Map<String, Object>> searchStudentsOfJob(String busid);
 }

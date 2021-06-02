@@ -17,13 +17,11 @@ public class StudentService {
 
     public void addStudent(Student student) {
         studentMapper.addStudent(student);
-        return;
     }
 
     public void updateStudent(Student student) {
         if(isUser(student.getOpenid())) {
             studentMapper.updateStudent(student);
         }
-        return;
     }
 }

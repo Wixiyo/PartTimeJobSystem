@@ -57,6 +57,13 @@ public class JobController {
         return new ResponseData(ExceptionMsg.SUCCESS, jobService.searchByTitle(title));
     }
 
+    @ApiOperation(value = "按编号查询兼职", notes = "按编号查询兼职")
+    @GetMapping("/getdetial/{busid}")//按名称查询兼职
+    public ResponseData getJobById(@PathVariable String busid){
+//        return JSON.toJSONString(jobService.searchByTitle(title));//将查询结果对象转化成JSON格式输出
+        return new ResponseData(ExceptionMsg.SUCCESS, jobService.searchById(busid));
+    }
+
     /**
      * 新增兼职
      * @param job
