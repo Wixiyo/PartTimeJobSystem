@@ -10,4 +10,8 @@ public interface InterestMapper {
 
     List<Job> getStuInterest(int sid);
     void addInterest(Interest interest);
+
+    Interest isStuInterest(String busid, Integer sid);
+
+    void deleteInterest(int sid, String busid);
 }

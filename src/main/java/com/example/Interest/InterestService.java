@@ -17,4 +17,11 @@ public class InterestService {
     public void addInterest(Interest interest){
         interestMapper.addInterest(interest);
     }
+    public Interest isStuInterest(String busid,Integer sid){
+        return interestMapper.isStuInterest(busid,sid);
+    }
+
+    public void deleteInterest(int sid, String busid) {
+        interestMapper.deleteInterest(sid,busid);
+    }
 }

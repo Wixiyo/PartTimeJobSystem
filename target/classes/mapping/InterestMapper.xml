@@ -8,8 +8,19 @@
         where job.busid IN(select interest.busid from interest where sid=#{sid})
 
     </select>
+
+    <select id="isStuInterest" resultType="com.example.Interest.Interest">
+        select * from interest
+        where busid=#{busid} and sid=#{sid}
+
+    </select>
+
     <insert id="addInterest" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.Interest.Interest">
-        insert into interest (sid,jid)
-            value (#{sid},#{jid})
+        insert into interest (sid,busid)
+            value (#{sid},#{busid})
     </insert>
+
+    <delete id="deleteInterest" >
+        delete from interest where busid=#{busid} and sid=#{sid}
+    </delete>
 </mapper>

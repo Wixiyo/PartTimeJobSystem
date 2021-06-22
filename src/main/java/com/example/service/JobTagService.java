@@ -32,6 +32,7 @@ public class JobTagService {
         List<Job> allJobs = jobService.searchAll();
         Collections.sort(allJobs, new Comparator<Job>() {
             public int compare(Job job1, Job job2) {
+                if(getJobScore(job1, tags) == getJobScore(job2, tags)) return 0;
                 return getJobScore(job1, tags) > getJobScore(job2, tags) ? -1 : 1;
             }
         });

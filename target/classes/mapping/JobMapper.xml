@@ -54,7 +54,7 @@
     <update id="updateJob" parameterType="com.example.jobManager.Job">
         update job
         set title=#{title},introduction=#{introduction},requirement=#{requirement},
-            salary=#{salary},job.state=#{state},startDate=#{startDate},endDate=#{endDate},
+            salary=#{salary},job.state=#{state},workDate=#{workDate},
             tags=#{tags},job.position=#{position},nums=#{nums}
         where busid=#{busid}
     </update>

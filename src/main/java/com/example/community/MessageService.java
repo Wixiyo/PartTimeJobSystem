@@ -1,7 +1,5 @@
-package com.example.service;
+package com.example.community;
 
-import com.example.entity.Message;
-import com.example.mapper.MessageMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

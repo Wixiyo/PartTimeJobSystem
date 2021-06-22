@@ -1,8 +1,7 @@
 package com.example.jobManager;
 
+import com.example.Interest.InterestService;
 import com.example.entity.BaseJob;
-import com.example.jobManager.Job;
-import com.example.jobManager.JobMapper;
 import com.example.utils.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +18,11 @@ import java.util.Map;
 public class JobService {
     @Autowired
     JobMapper jobMapper;
+    @Autowired
+    StudentCoJobService studentCoJobService;
+    @Autowired
+    InterestService interestService;
+
     public List<Job> searchAll(){
 
         return jobMapper.searchAll();
@@ -58,5 +63,29 @@ public class JobService {
 
     public Job searchById(String busid) {
         return jobMapper.searchById(busid);
+    }
+
+    /**
+     * 查询兼职对学生的详细信息
+     * @param busid 兼职编号
+     * @param sid 学生id
+     * @return map 兼职详情
+     */
+    public Map<String, Integer> jobForStu(String busid,Integer sid){
+        Map<String, Integer> map = new HashMap<>();
+        map.put("numsofapply",studentCoJobService.numsOfApply(busid));
+        if(studentCoJobService.isStuInApply(busid,sid)!=null){
+            map.put("isApply",studentCoJobService.isStuInApply(busid,sid).getState());
+        }
+        else {
+            map.put("isApply",-1);
+        }
+        if(interestService.isStuInterest(busid, sid)!=null){
+            map.put("isInterest",1);
+        }
+        else {
+            map.put("isInterest",0);
+        }
+        return map;
     }
 }

@@ -28,4 +28,10 @@ public class InterestController {
         return new ResponseData(ExceptionMsg.SUCCESS,interest);
     }
 
+    @ApiOperation(value = "学生取消收藏兼职")
+    @PostMapping(value = "/delete")
+    public ResponseData deleteInterest( int sid, String busid){
+        interestService.deleteInterest(sid,busid);
+        return new ResponseData(ExceptionMsg.SUCCESS,busid);
+    }
 }

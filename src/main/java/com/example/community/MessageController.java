@@ -1,9 +1,9 @@
-package com.example.controller;
+package com.example.community;
 
-import com.example.entity.Message;
+import com.example.community.Message;
 import com.example.result.ExceptionMsg;
 import com.example.result.ResponseData;
-import com.example.service.MessageService;
+import com.example.community.MessageService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

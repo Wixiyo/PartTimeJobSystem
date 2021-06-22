@@ -53,15 +53,19 @@ public class JobController {
     @ApiOperation(value = "按名称查询兼职", notes = "按名称查询兼职")
     @GetMapping("/search/{title}")//按名称查询兼职
     public ResponseData getJobByTitle(@PathVariable String title){
-//        return JSON.toJSONString(jobService.searchByTitle(title));//将查询结果对象转化成JSON格式输出
         return new ResponseData(ExceptionMsg.SUCCESS, jobService.searchByTitle(title));
     }
 
     @ApiOperation(value = "按编号查询兼职", notes = "按编号查询兼职")
     @GetMapping("/getdetial/{busid}")//按名称查询兼职
     public ResponseData getJobById(@PathVariable String busid){
-//        return JSON.toJSONString(jobService.searchByTitle(title));//将查询结果对象转化成JSON格式输出
         return new ResponseData(ExceptionMsg.SUCCESS, jobService.searchById(busid));
+    }
+
+    @ApiOperation(value = "查询学生对兼职的报名及收藏情况", notes = "查询学生对兼职的报名及收藏情况")
+    @GetMapping("/job-for-stu/{busid}/{sid}")//按名称查询兼职
+    public ResponseData jobForStu(@PathVariable String busid,@PathVariable Integer sid){
+        return new ResponseData(ExceptionMsg.SUCCESS, jobService.jobForStu(busid,sid));
     }
 
     /**

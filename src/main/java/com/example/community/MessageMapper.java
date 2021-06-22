@@ -1,6 +1,5 @@
-package com.example.mapper;
+package com.example.community;
 
-import com.example.entity.Message;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
