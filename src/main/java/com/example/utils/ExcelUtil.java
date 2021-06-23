@@ -8,25 +8,17 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.Console;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.util.*;
 
-public class ExcelUtil<T> {
+public class ExcelUtil {
 
-    // 定义范型，这样就能传对应的实体类来封装excel数据
-    private T t;
 
-    public ExcelUtil(T t) {
-        this.t = t;
-    }
+    static public List<Map<String,String>> AnalysisExcel(InputStream is, String fileName) throws IOException {
 
-    public List<Map> AnalysisExcel(InputStream is, String fileName) throws IOException {
-
-        List<Map> list = new ArrayList<>();
+        List<Map<String, String>> list = new ArrayList<>();
         Workbook workbook = createWorkbookByExcelType(is, fileName); // 创建工作簿
 
         for(int a = 0; a < workbook.getNumberOfSheets(); a++){

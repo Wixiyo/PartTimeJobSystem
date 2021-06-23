@@ -1,6 +1,5 @@
-package com.example.jobManager;
+package com.example.jobmanager;
 
-import com.example.jobManager.Studentcojob;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

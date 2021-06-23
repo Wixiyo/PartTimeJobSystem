@@ -1,4 +1,4 @@
-package com.example.jobManager;
+package com.example.jobmanager;
 
 import com.example.result.ExceptionMsg;
 import com.example.result.ResponseData;

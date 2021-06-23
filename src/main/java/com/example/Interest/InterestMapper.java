@@ -1,6 +1,6 @@
 package com.example.Interest;
 
-import com.example.jobManager.Job;
+import com.example.jobmanager.Job;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

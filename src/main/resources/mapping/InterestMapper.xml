@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.Interest.InterestMapper">
-    <select id="getStuInterest" resultType="com.example.jobManager.Job">
+    <select id="getStuInterest" resultType="com.example.jobmanager.Job">
         select * from job
         where job.busid IN(select interest.busid from interest where sid=#{sid})
 

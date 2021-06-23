@@ -1,6 +1,5 @@
-package com.example.jobManager;
+package com.example.jobmanager;
 
-import com.example.jobManager.Job;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public interface JobMapper {
     void updateJob(Job job);
 
     // 批量导入学生信息
-    Integer batchImportJobInfo(List<Map> jobList);
+    Integer batchImportJobInfo(List<Map<String,String>> jobList);
 
     Job searchById(String busid);
 }

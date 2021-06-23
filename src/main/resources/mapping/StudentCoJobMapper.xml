@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.jobManager.StudentCoJobMapper" >
-    <insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.jobManager.Studentcojob">
+<mapper namespace="com.example.jobmanager.StudentCoJobMapper" >
+    <insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.jobmanager.Studentcojob">
         insert into Studentcojob (busid,sid,createdate,Studentcojob.state)
             value (#{busid},#{sid},now(),#{state})
     </insert>
-    <update id="update" parameterType="com.example.jobManager.Studentcojob">
+    <update id="update" parameterType="com.example.jobmanager.Studentcojob">
         update Studentcojob
         set Studentcojob.state=#{state}
         where busid=#{busid} and sid=#{sid}
@@ -13,10 +13,10 @@
     <select id="numsOfApply" parameterType="String" resultType="Integer">
         select count(*) from  studentcojob where busid=#{busid}
     </select>
-    <select id="isStuInApply" resultType="com.example.jobManager.Studentcojob">
+    <select id="isStuInApply" resultType="com.example.jobmanager.Studentcojob">
         select * from  studentcojob where busid=#{busid} and sid=#{sid}
     </select>
-    <select id="searchJobsOfStudent" resultType="com.example.jobManager.Job">
+    <select id="searchJobsOfStudent" resultType="com.example.jobmanager.Job">
         SELECT * FROM JOB
         WHERE busid IN (
             SELECT busid FROM studentcojob

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.jobManager.JobMapper">
+<mapper namespace="com.example.jobmanager.JobMapper">
 
     <insert id="batchImportJobInfo" parameterType="java.util.List">
         insert into job
@@ -30,19 +30,19 @@
         requirement=VALUES(requirement)
     </insert>
 
-    <select id="searchAll" resultType="com.example.jobManager.Job">
+    <select id="searchAll" resultType="com.example.jobmanager.Job">
         select * from job
     </select>
 
-    <select id="searchByTitle" resultType="com.example.jobManager.Job">
+    <select id="searchByTitle" resultType="com.example.jobmanager.Job">
         select * from job where introduction like CONCAT('%',#{title},'%')
     </select>
 
-    <select id="searchById" resultType="com.example.jobManager.Job">
+    <select id="searchById" resultType="com.example.jobmanager.Job">
         select * from job where busid=#{busid}
     </select>
 
-    <insert id="addJob" useGeneratedKeys="true" keyProperty="busid" parameterType="com.example.jobManager.Job">
+    <insert id="addJob" useGeneratedKeys="true" keyProperty="busid" parameterType="com.example.jobmanager.Job">
         insert into job (title,introduction,requirement,salary,busid,workDate,job.state, tags, job.position,nums)
             value (#{title},#{introduction},#{requirement},#{salary},#{busid},#{workDate},#{state},#{tags},#{position},#{nums})
     </insert>
@@ -51,7 +51,7 @@
         delete from job where busid=#{busid}
     </delete>
 
-    <update id="updateJob" parameterType="com.example.jobManager.Job">
+    <update id="updateJob" parameterType="com.example.jobmanager.Job">
         update job
         set title=#{title},introduction=#{introduction},requirement=#{requirement},
             salary=#{salary},job.state=#{state},workDate=#{workDate},

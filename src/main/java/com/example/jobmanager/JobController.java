@@ -1,10 +1,9 @@
-package com.example.jobManager;
+package com.example.jobmanager;
 
 import com.example.result.ExceptionMsg;
 import com.example.result.ResponseData;
 import com.example.service.JobTagService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -121,7 +120,7 @@ public class JobController {
 
         try{
             is = file.getInputStream();
-            List<Map> jobList = jobService.getListByExcel(is,fileName);// 获取解析后的List集合
+            List<Map<String,String>> jobList = jobService.getListByExcel(is,fileName);// 获取解析后的List集合
 //            return new ResponseData(ExceptionMsg.SUCCESS, jobList);
              //System.out.println(studentList.toString());
             Boolean result = jobService.batchImportJobInfo(jobList); // 把数据插入数据库

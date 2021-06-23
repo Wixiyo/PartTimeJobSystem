@@ -1,4 +1,4 @@
-package com.example.jobManager;
+package com.example.jobmanager;
 
 import com.example.StudentManage.Student;
 import com.example.StudentManage.StudentService;
@@ -7,7 +7,6 @@ import com.example.result.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.service.Tags;
 
 import javax.annotation.Resource;
 

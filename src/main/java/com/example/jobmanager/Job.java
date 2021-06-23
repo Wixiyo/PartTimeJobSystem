@@ -1,6 +1,4 @@
-package com.example.jobManager;
-
-import java.util.Date;
+package com.example.jobmanager;
 
 public class Job {
     private String busid;

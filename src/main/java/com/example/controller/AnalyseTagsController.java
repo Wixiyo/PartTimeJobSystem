@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.jobManager.Job;
+import com.example.jobmanager.Job;
 import com.example.result.ExceptionMsg;
 import com.example.result.ResponseData;
 import com.example.service.AnalyseTagsService;
