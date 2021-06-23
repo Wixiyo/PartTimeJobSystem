@@ -17,19 +17,16 @@ public class AnalyseTagsService {
     @Autowired
     JobTagService jobTagService;
 
-    public List<Job> AnalyseTags(int sid) {
+    public List<Job> analyseTags(int sid) {
         List<Job> interestedJobs = interestService.getStuInterest(sid);
         List<String> top5Tags = new ArrayList<>();
-        Map<String, Long> map = interestedJobs.stream().map(job -> {
-            return (job.getTags() != null && !job.getTags().equals("")) ? job.getTags().split(";") : null;
-        }).filter(Objects::nonNull).flatMap(Arrays::stream).collect(Collectors.groupingBy(String::valueOf, Collectors.counting()));
-        System.out.println(map.keySet());
-        System.out.println(map.values());
+        Map<String, Long> map = interestedJobs.stream().map(job -> (job.getTags() != null && !job.getTags().equals("")) ? job.getTags().split(";") : null)
+                .filter(Objects::nonNull).flatMap(Arrays::stream)
+                .collect(Collectors.groupingBy(String::valueOf, Collectors.counting()));
         if (map.keySet().size() <= 5) top5Tags.addAll(map.keySet());
         else {
             List<Map.Entry<String, Long>> infoIds = new ArrayList<>(map.entrySet());
             infoIds.sort((o1, o2) -> ((int)(o2.getValue() - o1.getValue())));
-            System.out.println(infoIds);
             top5Tags.add(infoIds.get(0).getKey());
             top5Tags.add(infoIds.get(1).getKey());
             top5Tags.add(infoIds.get(2).getKey());

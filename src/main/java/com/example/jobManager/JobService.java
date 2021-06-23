@@ -1,6 +1,6 @@
 package com.example.jobManager;
 
-import com.example.Interest.InterestService;
+import com.example.Interest.InterestMapper;
 import com.example.entity.BaseJob;
 import com.example.utils.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +19,9 @@ public class JobService {
     @Autowired
     JobMapper jobMapper;
     @Autowired
-    StudentCoJobService studentCoJobService;
+    StudentCoJobMapper studentCoJobMapper;
     @Autowired
-    InterestService interestService;
+    InterestMapper interestMapper;
 
     public List<Job> searchAll(){
 
@@ -73,14 +73,14 @@ public class JobService {
      */
     public Map<String, Integer> jobForStu(String busid,Integer sid){
         Map<String, Integer> map = new HashMap<>();
-        map.put("numsofapply",studentCoJobService.numsOfApply(busid));
-        if(studentCoJobService.isStuInApply(busid,sid)!=null){
-            map.put("isApply",studentCoJobService.isStuInApply(busid,sid).getState());
+        map.put("numsofapply",studentCoJobMapper.numsOfApply(busid));
+        if(studentCoJobMapper.isStuInApply(busid,sid)!=null){
+            map.put("isApply",studentCoJobMapper.isStuInApply(busid,sid).getState());
         }
         else {
             map.put("isApply",-1);
         }
-        if(interestService.isStuInterest(busid, sid)!=null){
+        if(interestMapper.isStuInterest(busid,sid)!=null){
             map.put("isInterest",1);
         }
         else {

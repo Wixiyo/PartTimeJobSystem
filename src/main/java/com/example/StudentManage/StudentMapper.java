@@ -7,7 +7,9 @@ import java.util.List;
 
 @Repository
 public interface StudentMapper {
-    public Student getStudentWithOpenId(String openid);
+    Student getStudentWithOpenId(String openid);
+
+    Student getStudentWithSId(Integer sid);
 
     void addStudent(Student student);
 

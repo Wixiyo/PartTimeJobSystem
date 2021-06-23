@@ -23,7 +23,7 @@ public class AnalyseTagsController {
     @ApiOperation(value = "分析兼职标签")
     @GetMapping(value = "/{sid}")
     public ResponseData AnalyseTags(@PathVariable int sid) {
-        List<Job> result = analyseTagsService.AnalyseTags(sid);
+        List<Job> result = analyseTagsService.analyseTags(sid);
         return new ResponseData(ExceptionMsg.SUCCESS, result);
     }
 }

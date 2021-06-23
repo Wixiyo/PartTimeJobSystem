@@ -1,20 +1,24 @@
 package com.example.jobManager;
 
+import com.example.StudentManage.StudentMapper;
 import com.example.community.Message;
-import com.example.community.MessageService;
+import com.example.community.MessageMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
-
+@Slf4j
 @Service
 public class StudentCoJobService {
     @Resource
     private StudentCoJobMapper studentcojobMapper;
     @Autowired
-    MessageService messageService;
+    MessageMapper messageMapper;
+    @Autowired
+    StudentMapper studentMapper;
 
     //新增报名情况
     public void addStuCoJob(Studentcojob scjob) {
@@ -23,19 +27,27 @@ public class StudentCoJobService {
 
     //更新学生报名情况，并向学生发送消息
     public void updateStuCoJob(Studentcojob scjob) {
-        studentcojobMapper.update(scjob);
-        Message message = new Message();
-        message.setFrom("管理员");
-        message.setState(0);
-        if(scjob.getState()==1){
-            message.setText("您报名的兼职"+scjob.getBusid()+"已通过报名");
-        }else if (scjob.getState()==2){
-            message.setText("您参与的兼职"+scjob.getBusid()+"已结束");
-        }else if (scjob.getState()==3){
-            message.setText("您报名的兼职"+scjob.getBusid()+"已被拒");
+        if(scjob!=null&&studentMapper.getStudentWithSId(scjob.getSid())!=null){
+            studentcojobMapper.update(scjob);
+            Message message = new Message();
+            message.setFrom("管理员");
+            message.setState(0);
+            if(scjob.getState()==1){
+                message.setText("您报名的兼职"+scjob.getBusid()+"已通过报名");
+            }else if (scjob.getState()==2){
+                message.setText("您参与的兼职"+scjob.getBusid()+"已结束");
+            }else if (scjob.getState()==3){
+                message.setText("您报名的兼职"+scjob.getBusid()+"已被拒");
+            }else {
+                log.error("报名状态异常");
+                return;
+            }
+            message.setTo(scjob.getSid());
+            messageMapper.insertMessage(message);
+        }else {
+            log.error("学生信息异常");
         }
-        message.setTo(scjob.getSid());
-        messageService.insertMessage(message);
+
     }
 
     //查看学生是否报名
@@ -45,10 +57,7 @@ public class StudentCoJobService {
 
     //查看兼职报名的人数
     public Integer numsOfApply(String busid){
-        if(studentcojobMapper.numsOfApply(busid)==null)
-            return 0;
-        else
-            return studentcojobMapper.numsOfApply(busid);
+        return studentcojobMapper.numsOfApply(busid);
     }
 
     //根据兼职查找报名的学生

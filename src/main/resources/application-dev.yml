@@ -22,5 +22,6 @@ logging:
   level:
     com:
       example: debug
+  path: log
 
 

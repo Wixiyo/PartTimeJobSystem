@@ -7,6 +7,11 @@
         WHERE openid = #{openid};
     </select>
 
+    <select id="getStudentWithSId" resultType="com.example.StudentManage.Student">
+        SELECT * FROM student
+        WHERE sid = #{sid};
+    </select>
+
     <insert id="addStudent" parameterType="com.example.StudentManage.Student">
         INSERT INTO student(student.name, nickname, school, gender, phone, mail, createdate, password, student.state, openid)
         VALUE (#{name}, #{nickname}, #{school}, #{gender}, #{phone}, #{mail}, now(), #{password}, #{state}, #{openid});
