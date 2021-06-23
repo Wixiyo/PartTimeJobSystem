@@ -1,6 +1,7 @@
 package com.example.jobManager;
 
 import com.example.Interest.InterestMapper;
+import com.example.StudentManage.StudentMapper;
 import com.example.entity.BaseJob;
 import com.example.utils.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,10 @@ public class JobService {
     StudentCoJobMapper studentCoJobMapper;
     @Autowired
     InterestMapper interestMapper;
+    @Autowired
+    StudentMapper studentMapper;
 
-    public List<Job> searchAll(){
+    public List<Job> searchAll() {
 
         return jobMapper.searchAll();
     }
@@ -46,17 +49,18 @@ public class JobService {
 
     public List<Map> getListByExcel(InputStream is, String fileName) throws IOException {
 
-        try{
+        try {
             List<Map> studentList = new ExcelUtil(new BaseJob()).AnalysisExcel(is, fileName);
             return studentList;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return new ArrayList<>();
     }
-    public Boolean batchImportJobInfo(List<Map> list){
+
+    public Boolean batchImportJobInfo(List<Map> list) {
         Integer flag = jobMapper.batchImportJobInfo(list);
-        if (flag > 0){
+        if (flag > 0) {
             return true;
         } else return false;
     }
@@ -67,24 +71,27 @@ public class JobService {
 
     /**
      * 查询兼职对学生的详细信息
-     * @param busid 兼职编号
-     * @param sid 学生id
+     *
+     * @param busId 兼职编号
+     * @param sid   学生id
      * @return map 兼职详情
      */
-    public Map<String, Integer> jobForStu(String busid,Integer sid){
+    public Map<String, Integer> jobForStu(String busId, Integer sid) {
         Map<String, Integer> map = new HashMap<>();
-        map.put("numsofapply",studentCoJobMapper.numsOfApply(busid));
-        if(studentCoJobMapper.isStuInApply(busid,sid)!=null){
-            map.put("isApply",studentCoJobMapper.isStuInApply(busid,sid).getState());
-        }
-        else {
-            map.put("isApply",-1);
-        }
-        if(interestMapper.isStuInterest(busid,sid)!=null){
-            map.put("isInterest",1);
-        }
-        else {
-            map.put("isInterest",0);
+        if (jobMapper.searchById(busId) != null && studentMapper.getStudentWithSId(sid) != null) {
+            map.put("numsOfApply", studentCoJobMapper.numsOfApply(busId));
+            if (studentCoJobMapper.isStuInApply(busId, sid) != null) {
+                map.put("isApply", studentCoJobMapper.isStuInApply(busId, sid).getState());
+            } else {
+                map.put("isApply", -1);
+            }
+            if (interestMapper.isStuInterest(busId, sid) != null) {
+                map.put("isInterest", 1);
+            } else {
+                map.put("isInterest", 0);
+            }
+        } else {
+            map.put("code", 500);
         }
         return map;
     }
