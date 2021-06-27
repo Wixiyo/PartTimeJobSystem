@@ -37,7 +37,4 @@ public class Commission {
         return result;
     }
 
-    public static void main(String[] args) {
-        System.out.println(calculate(2,3,8));
-    }
 }
