@@ -2,7 +2,7 @@ package com.example.jobmanager;
 
 import com.example.result.ExceptionMsg;
 import com.example.result.ResponseData;
-import com.example.service.JobTagService;
+import com.example.recommendjob.JobTagService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

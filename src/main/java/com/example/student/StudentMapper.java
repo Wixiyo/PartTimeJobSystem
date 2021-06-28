@@ -1,9 +1,6 @@
-package com.example.StudentManage;
+package com.example.student;
 
 import org.springframework.stereotype.Repository;
-
-import java.util.Collection;
-import java.util.List;
 
 @Repository
 public interface StudentMapper {

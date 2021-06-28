@@ -1,4 +1,4 @@
-package com.example.StudentManage;
+package com.example.student;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;

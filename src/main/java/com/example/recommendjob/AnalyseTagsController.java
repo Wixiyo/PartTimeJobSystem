@@ -1,9 +1,9 @@
-package com.example.controller;
+package com.example.recommendjob;
 
 import com.example.jobmanager.Job;
 import com.example.result.ExceptionMsg;
 import com.example.result.ResponseData;
-import com.example.service.AnalyseTagsService;
+import com.example.recommendjob.AnalyseTagsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

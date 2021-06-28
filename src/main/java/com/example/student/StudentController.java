@@ -1,7 +1,7 @@
 package com.example.jobmanager;
 
-import com.example.StudentManage.Student;
-import com.example.StudentManage.StudentService;
+import com.example.student.Student;
+import com.example.student.StudentService;
 import com.example.result.ExceptionMsg;
 import com.example.result.ResponseData;
 import io.swagger.annotations.Api;

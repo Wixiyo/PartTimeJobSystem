@@ -1,7 +1,7 @@
 package com.example.jobmanager;
 
 import com.example.Interest.InterestMapper;
-import com.example.StudentManage.StudentMapper;
+import com.example.student.StudentMapper;
 import com.example.utils.ExcelUtil;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ import java.util.Map;
 
 
 @Service
-public class JobService {
+public class JobService implements IJob{
     /**
      * NO_APPLY表示学生没有报名兼职
      */
@@ -50,7 +50,6 @@ public class JobService {
      * @return 兼职列表
      */
     public List<Job> searchAll() {
-
         return jobMapper.searchAll();
     }
 

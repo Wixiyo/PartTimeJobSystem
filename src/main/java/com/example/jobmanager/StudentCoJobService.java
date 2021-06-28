@@ -1,6 +1,6 @@
 package com.example.jobmanager;
 
-import com.example.StudentManage.StudentMapper;
+import com.example.student.StudentMapper;
 import com.example.community.Message;
 import com.example.community.MessageMapper;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.recommendjob;
 
 import com.example.Interest.InterestService;
 import com.example.jobmanager.Job;
@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 @Service
-public class AnalyseTagsService {
+public class AnalyseTagsService implements IAnalyseTags {
 
     /**
      * 引入兼职收藏Service

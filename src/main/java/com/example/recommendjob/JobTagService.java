@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.recommendjob;
 
 import com.example.jobmanager.Job;
 import com.example.jobmanager.JobMapper;
@@ -11,7 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Service
-public class JobTagService {
+public class JobTagService implements IJobTags{
     @Autowired
     JobMapper jobMapper;
 
